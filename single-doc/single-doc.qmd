@@ -1,0 +1,25 @@
+---
+title: "single-doc"
+format: native
+---
+
+# Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+
+To create the release cycle in your repo you may want to use Conventional Commits.
+
+Conventional Commits are a way to format and standardize your commit messages, which can be used to then automate the repo's release cycle. For example, one conventional naming method is to label any commit associated with a new feature as `feat:` plus a commit message.
+
+-   The word `feat:` can trigger a Github Action to add that commit to your changelog under the **Features** header,
+-   and it will up-version the minor release version number.
+-   So if you are on release 1.0.0, a new `feat` will up-version the cycle to 1.1.0
+-   Commit titles that start with the word `fix:` as in a bug fix will up-version the patch number of the, i.e. 1.0.0 to 1.0.1
+
+# Automating The Release Cycle
+
+You should consider automating your release cycle so that your project cycle is consistent and predictable. There are many different ways to approach this.
+
+Some repos have semi-automatic cycles where there is some manual component of releasing their software, whereas others are fully automated. Manual releases can work too for some scenarios.
+
