@@ -1,0 +1,437 @@
+Pandoc
+  Meta
+    { unMeta =
+        fromList [ ( "title" , MetaInlines [ Str "single-doc" ] ) ]
+    }
+  [ Header 1 ( "quarto" , [] , [] ) [ Str "Quarto" ]
+  , Para
+      [ Str "Quarto"
+      , Space
+      , Str "enables"
+      , Space
+      , Str "you"
+      , Space
+      , Str "to"
+      , Space
+      , Str "weave"
+      , Space
+      , Str "together"
+      , Space
+      , Str "content"
+      , Space
+      , Str "and"
+      , Space
+      , Str "executable"
+      , Space
+      , Str "code"
+      , Space
+      , Str "into"
+      , Space
+      , Str "a"
+      , Space
+      , Str "finished"
+      , Space
+      , Str "document."
+      , Space
+      , Str "To"
+      , Space
+      , Str "learn"
+      , Space
+      , Str "more"
+      , Space
+      , Str "about"
+      , Space
+      , Str "Quarto"
+      , Space
+      , Str "see"
+      , Space
+      , Link
+          ( "" , [ "uri" ] , [] )
+          [ Str "https://quarto.org" ]
+          ( "https://quarto.org" , "" )
+      , Str "."
+      ]
+  , Para
+      [ Str "To"
+      , Space
+      , Str "create"
+      , Space
+      , Str "the"
+      , Space
+      , Str "release"
+      , Space
+      , Str "cycle"
+      , Space
+      , Str "in"
+      , Space
+      , Str "your"
+      , Space
+      , Str "repo"
+      , Space
+      , Str "you"
+      , Space
+      , Str "may"
+      , Space
+      , Str "want"
+      , Space
+      , Str "to"
+      , Space
+      , Str "use"
+      , Space
+      , Str "Conventional"
+      , Space
+      , Str "Commits."
+      ]
+  , Para
+      [ Str "Conventional"
+      , Space
+      , Str "Commits"
+      , Space
+      , Str "are"
+      , Space
+      , Str "a"
+      , Space
+      , Str "way"
+      , Space
+      , Str "to"
+      , Space
+      , Str "format"
+      , Space
+      , Str "and"
+      , Space
+      , Str "standardize"
+      , Space
+      , Str "your"
+      , Space
+      , Str "commit"
+      , Space
+      , Str "messages,"
+      , Space
+      , Str "which"
+      , Space
+      , Str "can"
+      , Space
+      , Str "be"
+      , Space
+      , Str "used"
+      , Space
+      , Str "to"
+      , Space
+      , Str "then"
+      , Space
+      , Str "automate"
+      , Space
+      , Str "the"
+      , Space
+      , Str "repo\8217s"
+      , Space
+      , Str "release"
+      , Space
+      , Str "cycle."
+      , Space
+      , Str "For"
+      , Space
+      , Str "example,"
+      , Space
+      , Str "one"
+      , Space
+      , Str "conventional"
+      , Space
+      , Str "naming"
+      , Space
+      , Str "method"
+      , Space
+      , Str "is"
+      , Space
+      , Str "to"
+      , Space
+      , Str "label"
+      , Space
+      , Str "any"
+      , Space
+      , Str "commit"
+      , Space
+      , Str "associated"
+      , Space
+      , Str "with"
+      , Space
+      , Str "a"
+      , Space
+      , Str "new"
+      , Space
+      , Str "feature"
+      , Space
+      , Str "as"
+      , Space
+      , Code ( "" , [] , [] ) "feat:"
+      , Space
+      , Str "plus"
+      , Space
+      , Str "a"
+      , Space
+      , Str "commit"
+      , Space
+      , Str "message."
+      ]
+  , BulletList
+      [ [ Plain
+            [ Str "The"
+            , Space
+            , Str "word"
+            , Space
+            , Code ( "" , [] , [] ) "feat:"
+            , Space
+            , Str "can"
+            , Space
+            , Str "trigger"
+            , Space
+            , Str "a"
+            , Space
+            , Str "Github"
+            , Space
+            , Str "Action"
+            , Space
+            , Str "to"
+            , Space
+            , Str "add"
+            , Space
+            , Str "that"
+            , Space
+            , Str "commit"
+            , Space
+            , Str "to"
+            , Space
+            , Str "your"
+            , Space
+            , Str "changelog"
+            , Space
+            , Str "under"
+            , Space
+            , Str "the"
+            , Space
+            , Strong [ Str "Features" ]
+            , Space
+            , Str "header,"
+            ]
+        ]
+      , [ Plain
+            [ Str "and"
+            , Space
+            , Str "it"
+            , Space
+            , Str "will"
+            , Space
+            , Str "up-version"
+            , Space
+            , Str "the"
+            , Space
+            , Str "minor"
+            , Space
+            , Str "release"
+            , Space
+            , Str "version"
+            , Space
+            , Str "number."
+            ]
+        ]
+      , [ Plain
+            [ Str "So"
+            , Space
+            , Str "if"
+            , Space
+            , Str "you"
+            , Space
+            , Str "are"
+            , Space
+            , Str "on"
+            , Space
+            , Str "release"
+            , Space
+            , Str "1.0.0,"
+            , Space
+            , Str "a"
+            , Space
+            , Str "new"
+            , Space
+            , Code ( "" , [] , [] ) "feat"
+            , Space
+            , Str "will"
+            , Space
+            , Str "up-version"
+            , Space
+            , Str "the"
+            , Space
+            , Str "cycle"
+            , Space
+            , Str "to"
+            , Space
+            , Str "1.1.0"
+            ]
+        ]
+      , [ Plain
+            [ Str "Commit"
+            , Space
+            , Str "titles"
+            , Space
+            , Str "that"
+            , Space
+            , Str "start"
+            , Space
+            , Str "with"
+            , Space
+            , Str "the"
+            , Space
+            , Str "word"
+            , Space
+            , Code ( "" , [] , [] ) "fix:"
+            , Space
+            , Str "as"
+            , Space
+            , Str "in"
+            , Space
+            , Str "a"
+            , Space
+            , Str "bug"
+            , Space
+            , Str "fix"
+            , Space
+            , Str "will"
+            , Space
+            , Str "up-version"
+            , Space
+            , Str "the"
+            , Space
+            , Str "patch"
+            , Space
+            , Str "number"
+            , Space
+            , Str "of"
+            , Space
+            , Str "the,"
+            , Space
+            , Str "i.e.\160\&1.0.0"
+            , Space
+            , Str "to"
+            , Space
+            , Str "1.0.1"
+            ]
+        ]
+      ]
+  , Header
+      1
+      ( "automating-the-release-cycle" , [] , [] )
+      [ Str "Automating"
+      , Space
+      , Str "The"
+      , Space
+      , Str "Release"
+      , Space
+      , Str "Cycle"
+      ]
+  , Para
+      [ Str "You"
+      , Space
+      , Str "should"
+      , Space
+      , Str "consider"
+      , Space
+      , Str "automating"
+      , Space
+      , Str "your"
+      , Space
+      , Str "release"
+      , Space
+      , Str "cycle"
+      , Space
+      , Str "so"
+      , Space
+      , Str "that"
+      , Space
+      , Str "your"
+      , Space
+      , Str "project"
+      , Space
+      , Str "cycle"
+      , Space
+      , Str "is"
+      , Space
+      , Str "consistent"
+      , Space
+      , Str "and"
+      , Space
+      , Str "predictable."
+      , Space
+      , Str "There"
+      , Space
+      , Str "are"
+      , Space
+      , Str "many"
+      , Space
+      , Str "different"
+      , Space
+      , Str "ways"
+      , Space
+      , Str "to"
+      , Space
+      , Str "approach"
+      , Space
+      , Str "this."
+      ]
+  , Para
+      [ Str "Some"
+      , Space
+      , Str "repos"
+      , Space
+      , Str "have"
+      , Space
+      , Str "semi-automatic"
+      , Space
+      , Str "cycles"
+      , Space
+      , Str "where"
+      , Space
+      , Str "there"
+      , Space
+      , Str "is"
+      , Space
+      , Str "some"
+      , Space
+      , Str "manual"
+      , Space
+      , Str "component"
+      , Space
+      , Str "of"
+      , Space
+      , Str "releasing"
+      , Space
+      , Str "their"
+      , Space
+      , Str "software,"
+      , Space
+      , Str "whereas"
+      , Space
+      , Str "others"
+      , Space
+      , Str "are"
+      , Space
+      , Str "fully"
+      , Space
+      , Str "automated."
+      , Space
+      , Str "Manual"
+      , Space
+      , Str "releases"
+      , Space
+      , Str "can"
+      , Space
+      , Str "work"
+      , Space
+      , Str "too"
+      , Space
+      , Str "for"
+      , Space
+      , Str "some"
+      , Space
+      , Str "scenarios."
+      ]
+  ]

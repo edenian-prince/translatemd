@@ -1,0 +1,125 @@
+---
+title: translate
+---
+
+
+```{r}
+library(lightparser)
+library(tidyverse)
+
+parsed <- lightparser::split_to_tbl("single-doc.qmd")
+parsed$text
+
+# reticulate::py_install("transformers",pip=TRUE)
+# # Also installing pytorch just as a contingency?
+# reticulate::py_install(c("torch", "sentencepiece"), pip = TRUE)
+
+transformers <- reticulate::import("transformers")
+
+translator <- transformers$pipeline(task = "translation",
+  model="Helsinki-NLP/opus-mt-en-es")
+
+```
+
+# Translate
+
+
+```{r}
+# translator(parsed[4]$text$`4`[2])
+
+es <- function(text){
+  # if text is blank, translator outputs 'no, no, no...' for some reason
+  if(stringr::str_squish(text)=="" | is.na(text)) {  
+    # translator(text)[[1]]$translation_text
+    print('')
+  } else {
+    translator(text)[[1]]$translation_text
+  }
+}
+
+es("hello")
+
+
+
+parsed_es <- parsed |>
+  unnest(cols = text) |>
+  mutate(text_es = map(text,es))
+
+```
+
+# Create a new es qmd
+
+
+```{r}
+parsed_es_to_qmd <- parsed_es |>
+  select(-text) |>
+  rename(text = text_es)
+
+# output to qmd
+combine_tbl_to_file(
+  parsed_es_to_qmd,
+  "index.es.qmd"
+)
+```
+
+
+```{python}
+from transformers import pipeline
+
+pipe = pipeline("translation", model="Helsinki-NLP/opus-mt-en-es")
+
+print(pipe("I love icecream"))
+
+result = pipe("I love icecream a lot")
+
+
+# print(pipe('I really want to go to Spain'))
+
+result[0]["translation_text"]
+
+
+def translate(from_text):
+  results = pipe(from_text)
+  return results[0]["translation_text"]
+```
+
+
+```{python}
+import re
+import yaml
+
+source_file = "single-doc.qmd"
+with open(source_file) as f:
+  qmd_text=f.readlines()
+  print(qmd_text)
+
+# extract the YAML header
+yaml_header = re.search(r'^---\n(.*?)\n---', qmd_text, re.DOTALL)
+if yaml_header:
+    qmd_text = qmd_text.replace(yaml_header.group(0), '')
+    title = yaml.safe_load(yaml_header.group(1))['title']
+else:
+    title = source_file.stem
+
+```
+
+
+```{r}
+library(lightparser)
+
+parsed <- lightparser::split_to_tbl("single-doc.qmd")
+parsed$text
+
+# reticulate::py_install("transformers",pip=TRUE)
+# # Also installing pytorch just as a contingency?
+# reticulate::py_install(c("torch", "sentencepiece"), pip = TRUE)
+
+transformers <- reticulate::import("transformers")
+
+translator <- transformers$pipeline(task = "translation",
+  model="Helsinki-NLP/opus-mt-en-es")
+
+```
+
+# Translate
+
