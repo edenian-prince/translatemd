@@ -6,6 +6,6 @@
 
 install_transformers <- function(..., envname="r-translatemd"){
 
-  reticulate::py_install(c("torch", "sentencepiece","transformers"), envname = envname, ...)
+  reticulate::py_install(c("torch", "sentencepiece","transformers"), envname = envname, pip=TRUE, ...)
 
 }
