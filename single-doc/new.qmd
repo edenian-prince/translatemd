@@ -29,9 +29,9 @@ translator <- transformers$pipeline(task = "translation",
 
 es <- function(text){
   # if text is blank, translator outputs 'no, no, no...' for some reason
-  if(stringr::str_squish(text)=="" | is.na(text)) {  
+  if(gsub(" ", "", text, fixed = TRUE)=="" | is.na(text)) {  
     # translator(text)[[1]]$translation_text
-    print('')
+    # print('')
   } else {
     translator(text)[[1]]$translation_text
   }
