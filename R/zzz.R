@@ -3,10 +3,17 @@
 
 transformers <- NULL
 
-.onLoad <- function(libname, pkgname){
-  
+.onLoad() <- function(...){
+  reticulate::py_require(packages = c("torch", "sentencepiece","transformers"))
   transformers <<- reticulate::import('transformers', delay_load = TRUE)
-  reticulate::use_virtualenv("r-translatemd",required = FALSE)
-  reticulate::configure_environment(pkgname)
-
 }
+
+# transformers <- NULL
+
+# .onLoad <- function(libname, pkgname){
+  
+#   transformers <<- reticulate::import('transformers', delay_load = TRUE)
+#   reticulate::use_virtualenv("r-translatemd",required = FALSE)
+#   reticulate::configure_environment(pkgname)
+
+# }

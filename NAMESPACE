@@ -3,6 +3,7 @@
 export(install_transformers)
 export(select_lang)
 export(translate)
+importFrom(lifecycle,deprecated)
 importFrom(reticulate,configure_environment)
 importFrom(reticulate,import)
 importFrom(reticulate,py_install)
