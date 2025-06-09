@@ -3,7 +3,7 @@
 
 transformers <- NULL
 
-.onLoad() <- function(...){
+.onLoad <- function(libname, pkgname){
   reticulate::py_require(packages = c("torch", "sentencepiece","transformers"))
   transformers <<- reticulate::import('transformers', delay_load = TRUE)
 }
